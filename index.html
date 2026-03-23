@@ -1,281 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul & Roy's Men's Group | SCG Live Differently</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --scg-teal: #1DB3C8; /* Approximated from your flyers */
-            --scg-black: #111111;
-            --scg-white: #FFFFFF;
-            --scg-gray: #F4F4F4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Differently | Men's Group</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-elevated: #1b1b1b;
+      --bg-card: #202020;
+      --bg-soft: #2a2a2a;
+      --text: #f4f1ea;
+      --text-muted: #c8c2b7;
+      --accent: #2fb7d3;
+      --accent-dark: #1a7f93;
+      --line: rgba(255,255,255,0.08);
+      --success: #8fd19e;
+      --shadow: 0 10px 30px rgba(0,0,0,0.28);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 900px;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--scg-gray);
-            color: var(--scg-black);
-            line-height: 1.6;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h1, h2, h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            line-height: 1.1;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(rgba(18,18,18,0.94), rgba(18,18,18,0.98)),
+        radial-gradient(circle at top left, rgba(47,183,211,0.12), transparent 28%);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-        /* Header */
-        header {
-            background-color: var(--scg-black);
-            color: var(--scg-white);
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 5px solid var(--scg-teal);
-        }
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px 16px 72px;
+    }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--scg-white);
-        }
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(47,183,211,0.22), rgba(47,183,211,0.08)),
+        var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        header p {
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -50px -50px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(47,183,211,0.18), transparent 70%);
+      pointer-events: none;
+    }
 
-        /* Container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
 
-        /* Alert Box */
-        .alert-box {
-            background-color: var(--scg-teal);
-            color: var(--scg-white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    h1, h2, h3, h4, p {
+      margin-top: 0;
+    }
 
-        .alert-box h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 0.95;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
 
-        /* Sections */
-        section {
-            background-color: var(--scg-white);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+    .hero p {
+      color: var(--text-muted);
+      max-width: 60ch;
+      margin-bottom: 14px;
+    }
 
-        section h2 {
-            font-size: 2.2rem;
-            color: var(--scg-teal);
-            border-bottom: 2px solid var(--scg-gray);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background-color: var(--scg-black);
-            color: var(--scg-white);
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            width: 100%;
-            margin-top: 1rem;
-        }
+    .pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
 
-        .btn:hover {
-            background-color: var(--scg-teal);
-            color: var(--scg-white);
-        }
+    .progress-card,
+    .today-card,
+    .section-card,
+    .day-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
 
-        /* Table */
-        .schedule-wrapper {
-            overflow-x: auto;
-        }
+    .progress-card,
+    .today-card,
+    .section-card {
+      padding: 18px 16px;
+      margin-bottom: 16px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            min-width: 500px;
-        }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--scg-gray);
-        }
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
 
-        th {
-            background-color: var(--scg-black);
-            color: var(--scg-white);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
+    .muted {
+      color: var(--text-muted);
+    }
 
-        tr.highlight {
-            background-color: rgba(29, 179, 200, 0.15);
-            font-weight: 700;
-            border-left: 4px solid var(--scg-teal);
-        }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
 
-        /* Mobile Adjustments */
-        @media (min-width: 600px) {
-            .btn {
-                width: auto;
-            }
-        }
-    </style>
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .today-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      background: rgba(47,183,211,0.16);
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .today-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.3rem;
+    }
+
+    .today-scripture {
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .mini-blocks {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .mini-block {
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .mini-label {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .verse {
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #071116;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .weekly-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .day-card {
+      overflow: hidden;
+    }
+
+    .day-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      color: inherit;
+      text-align: left;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .day-left {
+      display: grid;
+      gap: 4px;
+    }
+
+    .day-name {
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .day-topic {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .day-arrow {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .day-card.open .day-arrow {
+      transform: rotate(180deg);
+    }
+
+    .day-body {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .day-card.open .day-body {
+      display: block;
+    }
+
+    .content-block {
+      margin-top: 16px;
+    }
+
+    .content-block h4 {
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+    }
+
+    .questions {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .questions li + li {
+      margin-top: 10px;
+    }
+
+    .application {
+      padding: 12px;
+      border-left: 4px solid var(--accent);
+      background: rgba(47,183,211,0.08);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .check-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .check-row label {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .utility-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .utility-tile {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .utility-tile h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .utility-tile p {
+      margin-bottom: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (min-width: 700px) {
+      .page {
+        padding: 28px 22px 88px;
+      }
+
+      .hero {
+        padding: 30px 24px;
+      }
+
+      .mini-blocks {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .utility-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .today-card,
+      .progress-card,
+      .section-card {
+        padding: 22px 20px;
+      }
+
+      .day-toggle {
+        padding: 18px 20px;
+      }
+
+      .day-body {
+        padding: 0 20px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Men’s Discipleship</div>
+      <h1>Live Differently</h1>
+      <p>
+        A weekly rhythm for men who want to follow Jesus with conviction,
+        humility, brotherhood, and real-life obedience.
+      </p>
 
-    <header>
-        <h1>Paul & Roy's Men's Group</h1>
-        <p>SCG CHURCH | LIVE DIFFERENTLY DISCIPLESHIP</p>
-    </header>
+      <div class="hero-meta">
+        <span class="pill">Week 1</span>
+        <span class="pill">March 23–27, 2026</span>
+        <span class="pill">Romans 1–4</span>
+      </div>
+    </section>
 
-    <div class="container">
+    <section class="progress-card">
+      <div class="progress-top">
+        <strong>Week Progress</strong>
+        <span id="progressText" class="muted">0 of 5 completed</span>
+      </div>
+      <div class="progress-bar" aria-label="Week progress">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
 
-        <div class="alert-box">
-            <h2>🚨 UPCOMING: FAST & GOOD FRIDAY!</h2>
-            <p><strong>Thursday, April 2 - Friday, April 3</strong></p>
-            <p style="margin-top: 10px;">Our group fasting day begins on Thursday, April 2nd and runs through Friday, April 3rd! We have decided as a group to all meet at the <strong>Good Friday Service at 6:30 PM</strong>. Afterwards, we will go out to dinner to break our fast together. See you there!</p>
+    <section class="today-card" id="todayCard">
+      <div class="today-badge">Today’s Focus</div>
+      <h3 id="todayTitle">Monday — Romans 1</h3>
+      <div id="todayScripture" class="today-scripture">Living by Faith</div>
+      <p id="todaySummary" class="muted">
+        Open today’s reading, think through the questions, and prayerfully ask God what needs to change in your life.
+      </p>
+
+      <div class="mini-blocks">
+        <div class="mini-block">
+          <span class="mini-label">Read</span>
+          <div id="todayRead">Romans 1</div>
         </div>
 
-        <section>
-            <h2>The Curriculum</h2>
-            <p>We are diving into a 10-week discipleship program. Please remember to complete your reading and bring your workbooks to our meetings!</p>
-            <a href="https://beacons.ai/scgdiscipleship" target="_blank" class="btn">🎧 Listen to the Supplemental Podcast</a>
-        </section>
+        <div class="mini-block">
+          <span class="mini-label">Key Verse</span>
+          <div id="todayVerseRef">Romans 1:17</div>
+        </div>
 
-        <section>
-            <h2>Serving Together</h2>
-            <p>We are currently waiting on SCG to give us our official Discipleship Serve assignment for Easter weekend.</p>
-            <p style="margin-top: 10px;">However, as Roy mentioned, <strong>we are hoping to be assigned as Greeters!</strong> Welcoming people as they arrive is both fun and incredibly important—we might just be the first impression that helps change someone's life! Stay tuned for our official time slot.</p>
-        </section>
+        <div class="mini-block">
+          <span class="mini-label">Live Differently</span>
+          <div>What is God asking me to do or change today?</div>
+        </div>
+      </div>
 
-        <section>
-            <h2>Spring 2026 Schedule</h2>
-            <p>Below is our schedule for Testimonies and Snacks. <em>(The row highlighted in teal is our next upcoming meeting!)</em></p>
-            
-            <div class="schedule-wrapper">
-                <table id="scheduleTable">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Topic</th>
-                            <th>Testimony</th>
-                            <th>Snacks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-date="2026-03-15">
-                            <td>3/15</td><td>Week 1: Launch</td><td>Michael</td><td>Michael</td>
-                        </tr>
-                        <tr data-date="2026-03-22">
-                            <td>3/22</td><td>Week 2: Jesus is King</td><td>Ray/Mike</td><td>Ray/Mike</td>
-                        </tr>
-                        <tr data-date="2026-03-29">
-                            <td>3/29</td><td>Week 3: Jesus is Our King</td><td>Johnny</td><td>Johnny</td>
-                        </tr>
-                        <tr data-date="2026-04-03">
-                            <td>4/3</td><td>GOOD FRIDAY</td><td>Group Service</td><td>Dinner After</td>
-                        </tr>
-                        <tr data-date="2026-04-05">
-                            <td>4/5</td><td>EASTER SUNDAY</td><td>No Meeting</td><td>-</td>
-                        </tr>
-                        <tr data-date="2026-04-12">
-                            <td>4/12</td><td>Week 4: Living in Grace</td><td>Joe E.</td><td>Joe E.</td>
-                        </tr>
-                        <tr data-date="2026-04-19">
-                            <td>4/19</td><td>Week 5: Living in Love</td><td>Todd/Guest</td><td>Todd/Guest</td>
-                        </tr>
-                        <tr data-date="2026-04-26">
-                            <td>4/26</td><td>Week 6: Marriage</td><td>Zac</td><td>Zac</td>
-                        </tr>
-                        <tr data-date="2026-05-03">
-                            <td>5/3</td><td>Week 7: Family</td><td>Mark</td><td>Mark</td>
-                        </tr>
-                        <tr data-date="2026-05-10">
-                            <td>5/10</td><td>Week 8: 10 Commandments</td><td>Bryan</td><td>Bryan</td>
-                        </tr>
-                        <tr data-date="2026-05-17">
-                            <td>5/17</td><td>Week 9: Life on Mission</td><td>TBD</td><td>TBD</td>
-                        </tr>
-                        <tr data-date="2026-05-24">
-                            <td>5/24</td><td>Review/Celebration</td><td>TBD</td><td>TBD</td>
-                        </tr>
-                    </tbody>
-                </table>
+      <div class="actions">
+        <a class="btn btn-primary" href="#weeklyPlan">Open This Week</a>
+        <button class="btn btn-secondary" id="jumpToTodayBtn" type="button">Jump to Today</button>
+      </div>
+    </section>
+
+    <section class="section-card" id="weeklyPlan">
+      <div class="section-title">
+        <h2>This Week</h2>
+        <span class="muted">Daily devotional plan</span>
+      </div>
+
+      <div class="weekly-stack" id="weeklyStack">
+        <!-- Monday -->
+        <article class="day-card" data-day-index="0" id="day-0">
+          <button class="day-toggle" type="button">
+            <div class="day-left">
+              <div class="day-name">Monday — March 23</div>
+              <div class="day-topic">Romans 1 • Living by Faith</div>
             </div>
-        </section>
+            <div class="day-arrow">⌄</div>
+          </button>
+          <div class="day-body">
+            <div class="content-block">
+              <h4>Read</h4>
+              <p>Romans 1</p>
+            </div>
 
-    </div>
+            <div class="content-block">
+              <h4>Key Verse</h4>
+              <p class="verse">
+                <strong>Romans 1:17</strong><br>
+                “For in the gospel the righteousness of God is revealed — a righteousness that is by faith from first to last, just as it is written: ‘The righteous will live by faith.’”
+              </p>
+            </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const rows = document.querySelectorAll('#scheduleTable tbody tr');
-            const today = new Date();
-            today.setHours(0,0,0,0); // Normalize today to midnight
-            
-            let closestRow = null;
-            let closestDiff = Infinity;
+            <div class="content-block">
+              <h4>Think</h4>
+              <ol class="questions">
+                <li>What is surprising to you about the people Jesus chose as His disciples? What is comforting?</li>
+                <li>Of the three aspects of discipleship — being with Jesus, being like Jesus, and doing what Jesus did — which is the most challenging to you? Why?</li>
+                <li>What are the indicators that a person is not living by faith that Paul outlines in our passage today?</li>
+              </ol>
+            </div>
 
-            rows.forEach(row => {
-                const dateStr = row.getAttribute('data-date');
-                if (dateStr) {
-                    // Parse the row date (splitting prevents timezone shifting issues)
-                    const [year, month, day] = dateStr.split('-');
-                    const rowDate = new Date(year, month - 1, day);
-                    
-                    // Calculate difference in time
-                    const diffTime = rowDate - today;
-                    
-                    // If the date is today or in the future, check if it's the closest
-                    if (diffTime >= 0 && diffTime < closestDiff) {
-                        closestDiff = diffTime;
-                        closestRow = row;
-                    }
-                }
-            });
+            <div class="content-block">
+              <h4>Live Differently</h4>
+              <div class="application">
+                Look back over our teaching, the Scripture you've read, and your answers above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?
+              </div>
+            </div>
 
-            // Highlight the closest upcoming meeting
-            if (closestRow) {
-                closestRow.classList.add('highlight');
-            }
+            <div class="check-row">
+              <input type="checkbox" id="check-0" class="progress-check" />
+              <label for="check-0">Mark Monday complete</label>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tuesday -->
+        <article class="day-card" data-day-index="1" id="day-1">
+          <button class="day-toggle" type="button">
+            <div class="day-left">
+              <div class="day-name">Tuesday — March 24</div>
+              <div class="day-topic">Romans 2 • Grace Leads to Repentance</div>
+            </div>
+            <div class="day-arrow">⌄</div>
+          </button>
+          <div class="day-body">
+            <div class="content-block">
+              <h4>Read</h4>
+              <p>Romans 2</p>
+            </div>
+
+            <div class="content-block">
+              <h4>Key Verse</h4>
+              <p class="verse">
+                <strong>Romans 2:4</strong><br>
+                “Or do you show contempt for the riches of his kindness, forbearance, and patience, not realizing that God’s kindness is intended to lead you to repentance.”
+              </p>
+            </div>
+
+            <div class="content-block">
+              <h4>Think</h4>
+              <ol class="questions">
+                <li>What does “imputed righteousness” mean?</li>
+                <li>Why is God’s grace the only acceptable motivation for living differently?</li>
+                <li>What does Romans 2 teach you about the righteousness that God expects from His people?</li>
+              </ol>
+            </div>
+
+            <div class="content-block">
+              <h4>Live Differently</h4>
+              <div class="application">
+                Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?
+              </div>
+            </div>
+
+            <div class="check-row">
+              <input type="checkbox" id="check-1" class="progress-check" />
+              <label for="check-1">Mark Tuesday complete</label>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wednesday -->
+        <article class="day-card" data-day-index="2" id="day-2">
+          <button class="day-toggle" type="button">
+            <div class="day-left">
+              <div class="day-name">Wednesday — March 25</div>
+              <div class="day-topic">Romans 3:1–20 • No One Righteous</div>
+            </div>
+            <div class="day-arrow">⌄</div>
+          </button>
+          <div class="day-body">
+            <div class="content-block">
+              <h4>Read</h4>
+              <p>Romans 3:1–20</p>
+            </div>
+
+            <div class="content-block">
+              <h4>Key Verse</h4>
+              <p class="verse">
+                <strong>Romans 3:10</strong><br>
+                “As it is written: ‘There is no one righteous, not even one.’”
+              </p>
+            </div>
+
+            <div class="content-block">
+              <h4>Think</h4>
+              <ol class="questions">
+                <li>How does today’s analogy help you better understand how God’s grace frees us to live bold lives of freedom?</li>
+                <li>What does it mean when we say that God will only bless you when you are “blessable”?</li>
+                <li>We say that humans are naturally slaves to sin, just like climbers are slaves to gravity. How does our passage today further illuminate this concept?</li>
+              </ol>
+            </div>
+
+            <div class="content-block">
+              <h4>Live Differently</h4>
+              <div class="application">
+                Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?
+              </div>
+            </div>
+
+            <div class="check-row">
+              <input type="checkbox" id="check-2" class="progress-check" />
+              <label for="check-2">Mark Wednesday complete</label>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thursday -->
+        <article class="day-card" data-day-index="3" id="day-3">
+          <button class="day-toggle" type="button">
+            <div class="day-left">
+              <div class="day-name">Thursday — March 26</div>
+              <div class="day-topic">Romans 3:21–31 • Justified by Grace</div>
+            </div>
+            <div class="day-arrow">⌄</div>
+          </button>
+          <div class="day-body">
+            <div class="content-block">
+              <h4>Read</h4>
+              <p>Romans 3:21–31</p>
+            </div>
+
+            <div class="content-block">
+              <h4>Key Verse</h4>
+              <p class="verse">
+                <strong>Romans 3:23–24</strong><br>
+                “…for all have sinned and fall short of the glory of God, and all are justified freely by his grace through the redemption that came by Christ Jesus.”
+              </p>
+            </div>
+
+            <div class="content-block">
+              <h4>Think</h4>
+              <ol class="questions">
+                <li>Why is it important for Christians to retreat and resist the world at times?</li>
+                <li>What does it mean when the Bible describes disciples of Jesus as “ambassadors”?</li>
+                <li>Who, according to today’s Scripture, needs Jesus’ grace? Who is it available to? Why is this important to remember?</li>
+              </ol>
+            </div>
+
+            <div class="content-block">
+              <h4>Live Differently</h4>
+              <div class="application">
+                Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?
+              </div>
+            </div>
+
+            <div class="check-row">
+              <input type="checkbox" id="check-3" class="progress-check" />
+              <label for="check-3">Mark Thursday complete</label>
+            </div>
+          </div>
+        </article>
+
+        <!-- Friday -->
+        <article class="day-card" data-day-index="4" id="day-4">
+          <button class="day-toggle" type="button">
+            <div class="day-left">
+              <div class="day-name">Friday — March 27</div>
+              <div class="day-topic">Romans 4 • Credited Righteousness</div>
+            </div>
+            <div class="day-arrow">⌄</div>
+          </button>
+          <div class="day-body">
+            <div class="content-block">
+              <h4>Read</h4>
+              <p>Romans 4</p>
+            </div>
+
+            <div class="content-block">
+              <h4>Key Verse</h4>
+              <p class="verse">
+                <strong>Romans 4:7–8</strong><br>
+                “Blessed are those whose transgressions are forgiven, whose sins are covered. Blessed is the one whose sin the Lord will never count against them.”
+              </p>
+            </div>
+
+            <div class="content-block">
+              <h4>Think</h4>
+              <ol class="questions">
+                <li>How does the Holy Spirit’s power enable us to embrace reality, even when it’s painful?</li>
+                <li>What does it mean to resist or “quench” the Holy Spirit’s power? Is it possible to do this and remain a disciple of Jesus?</li>
+                <li>Given all you have learned so far, what does it mean that God “credits” us with righteousness?</li>
+              </ol>
+            </div>
+
+            <div class="content-block">
+              <h4>Live Differently</h4>
+              <div class="application">
+                Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?
+              </div>
+            </div>
+
+            <div class="check-row">
+              <input type="checkbox" id="check-4" class="progress-check" />
+              <label for="check-4">Mark Friday complete</label>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-title">
+        <h2>Brotherhood Tools</h2>
+        <span class="muted">Simple add-ons</span>
+      </div>
+
+      <div class="utility-grid">
+        <div class="utility-tile">
+          <h3>Prayer Prompt</h3>
+          <p>Add one short prayer focus for the week so the page feels spiritual, not just informational.</p>
+        </div>
+        <div class="utility-tile">
+          <h3>Group Challenge</h3>
+          <p>Include one practical challenge for the men to live out together before the next meeting.</p>
+        </div>
+        <div class="utility-tile">
+          <h3>Testimony Prep</h3>
+          <p>Highlight who is sharing next so the page supports accountability and readiness.</p>
+        </div>
+      </div>
+
+      <p class="footer-note">
+        Live Differently is built to help men read Scripture, think honestly, and obey Jesus in real life.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const days = [
+      {
+        index: 0,
+        title: "Monday — Romans 1",
+        subtitle: "Living by Faith",
+        read: "Romans 1",
+        verseRef: "Romans 1:17"
+      },
+      {
+        index: 1,
+        title: "Tuesday — Romans 2",
+        subtitle: "Grace Leads to Repentance",
+        read: "Romans 2",
+        verseRef: "Romans 2:4"
+      },
+      {
+        index: 2,
+        title: "Wednesday — Romans 3:1–20",
+        subtitle: "No One Righteous",
+        read: "Romans 3:1–20",
+        verseRef: "Romans 3:10"
+      },
+      {
+        index: 3,
+        title: "Thursday — Romans 3:21–31",
+        subtitle: "Justified by Grace",
+        read: "Romans 3:21–31",
+        verseRef: "Romans 3:23–24"
+      },
+      {
+        index: 4,
+        title: "Friday — Romans 4",
+        subtitle: "Credited Righteousness",
+        read: "Romans 4",
+        verseRef: "Romans 4:7–8"
+      }
+    ];
+
+    const toggles = document.querySelectorAll(".day-toggle");
+    const checks = document.querySelectorAll(".progress-check");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+    const jumpToTodayBtn = document.getElementById("jumpToTodayBtn");
+
+    const todayTitle = document.getElementById("todayTitle");
+    const todayScripture = document.getElementById("todayScripture");
+    const todayRead = document.getElementById("todayRead");
+    const todayVerseRef = document.getElementById("todayVerseRef");
+
+    const STORAGE_KEY = "live-differently-week1-progress";
+
+    function setTodayCard() {
+      const now = new Date();
+      const today = now.getDay(); // Sunday 0 ... Saturday 6
+
+      // This week starts Monday. Default to Monday if outside Mon-Fri.
+      let currentIndex = 0;
+      if (today >= 1 && today <= 5) {
+        currentIndex = today - 1;
+      }
+
+      const current = days[currentIndex];
+      todayTitle.textContent = current.title;
+      todayScripture.textContent = current.subtitle;
+      todayRead.textContent = current.read;
+      todayVerseRef.textContent = current.verseRef;
+
+      openCard(current.index);
+
+      jumpToTodayBtn.addEventListener("click", () => {
+        document.getElementById(`day-${current.index}`).scrollIntoView({
+          behavior: "smooth",
+          block: "start"
         });
-    </script>
+      });
+    }
+
+    function openCard(index) {
+      document.querySelectorAll(".day-card").forEach((card) => {
+        const isMatch = Number(card.dataset.dayIndex) === index;
+        card.classList.toggle("open", isMatch);
+      });
+    }
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const card = toggle.closest(".day-card");
+        card.classList.toggle("open");
+      });
+    });
+
+    function saveProgress() {
+      const state = Array.from(checks).map((check) => check.checked);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      updateProgress();
+    }
+
+    function loadProgress() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+
+      try {
+        const state = JSON.parse(raw);
+        checks.forEach((check, i) => {
+          check.checked = Boolean(state[i]);
+        });
+      } catch (err) {
+        console.warn("Could not load saved progress.", err);
+      }
+    }
+
+    function updateProgress() {
+      const completed = Array.from(checks).filter((check) => check.checked).length;
+      const percent = (completed / checks.length) * 100;
+      progressFill.style.width = `${percent}%`;
+      progressText.textContent = `${completed} of ${checks.length} completed`;
+    }
+
+    checks.forEach((check) => {
+      check.addEventListener("change", saveProgress);
+    });
+
+    loadProgress();
+    updateProgress();
+    setTodayCard();
+  </script>
 </body>
 </html>
-
