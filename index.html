@@ -1,351 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Differently | Paul & Roy's Group</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live Differently | Paul & Roy's Group</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="eyebrow">Paul & Roy's Group</div>
-      <h1>Live Differently</h1>
-      <p class="hero-lead">
-        A weekly rhythm for men who want to follow Jesus with conviction, humility,
-        brotherhood, and real-life obedience.
-      </p>
-      <p class="hero-why">
-        I created this page because our group chats were starting to eat away at our
-        phones' screen real estate. This gives us one organized place for our weekly
-        readings, discussion prompts, podcast, schedule, and key announcements.
-      </p>
 
-      <div class="hero-meta">
-        <span class="pill">Sunday Mornings • 9:00 AM</span>
-        <span class="pill">Week 1</span>
-        <span class="pill">March 23–27, 2026</span>
-        <span class="pill">Romans 1–4</span>
-      </div>
+<main class="page">
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://beacons.ai/scgdiscipleship" target="_blank" rel="noopener noreferrer">Listen to the Podcast</a>
-        <a class="btn btn-secondary" href="#scheduleSection">View Sunday Schedule</a>
-      </div>
-    </section>
+<section class="hero">
+<div class="eyebrow">Paul & Roy's Group</div>
+<h1>Live Differently</h1>
 
-    <section class="announcement-card">
-      <div class="announcement-icon">⛪</div>
-      <div class="announcement-body">
-        <div class="announcement-title">Upcoming: Fast & Good Friday</div>
-        <p>
-          Our group fasting day begins on <strong>Thursday, April 2</strong> and runs through
-          <strong>Friday, April 3</strong>. We’ll meet at the
-          <strong>Good Friday Service at 6:30 PM</strong>, and afterwards we’ll go out to dinner
-          together to break our fast.
-        </p>
-      </div>
-    </section>
+<p class="hero-why">
+I created this page because our group chats were eating away at our phones'
+screen real estate. This keeps everything organized in one place for our
+Sunday 9:00 AM men's group.
+</p>
 
-    <section class="progress-card">
-      <div class="progress-top">
-        <strong>Week Progress</strong>
-        <span id="progressText" class="muted">0 of 5 completed</span>
-      </div>
-      <div class="progress-bar" aria-label="Week progress">
-        <div id="progressFill" class="progress-fill"></div>
-      </div>
-    </section>
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://beacons.ai/scgdiscipleship" target="_blank">Listen to Podcast</a>
+<a class="btn btn-secondary" href="#eventsSection">Upcoming Events</a>
+</div>
 
-    <section class="today-card" id="todayCard">
-      <div class="today-badge">Today's Focus</div>
-      <h3 id="todayTitle">Monday — Romans 1</h3>
-      <div id="todayScripture" class="today-scripture">Living by Faith</div>
-      <p id="todaySummary" class="muted">
-        Open today's reading, think through the questions, and prayerfully ask God
-        what needs to change in your life.
-      </p>
+</section>
 
-      <div class="mini-blocks">
-        <div class="mini-block">
-          <span class="mini-label">Read</span>
-          <div id="todayRead">Romans 1</div>
-        </div>
 
-        <div class="mini-block">
-          <span class="mini-label">Key Verse</span>
-          <div id="todayVerseRef">Romans 1:17</div>
-        </div>
+<section class="section-card" id="eventsSection">
+<div class="section-title">
+<h2>Upcoming Events</h2>
+<span class="muted">Sunday Mornings • 9:00 AM</span>
+</div>
 
-        <div class="mini-block">
-          <span class="mini-label">Live Differently</span>
-          <div>What is God asking me to do or change today?</div>
-        </div>
-      </div>
+<div class="schedule-cards">
 
-      <div class="actions">
-        <a class="btn btn-primary" href="#weeklyPlan">Open This Week</a>
-        <button class="btn btn-secondary" id="jumpToTodayBtn" type="button">Jump to Today</button>
-      </div>
-    </section>
+<article class="schedule-item schedule-item--highlight">
+<div class="schedule-date">3/29</div>
+<div class="schedule-main">
+<div class="schedule-topic">
+Sunday Men's Group — 9:00 AM 
+<span class="upcoming-chip">Next Up</span>
+</div>
+<div class="schedule-meta">
+<span><strong>Topic:</strong> Week 3: Jesus is Our King</span>
+<span><strong>Testimony:</strong> Johnny</span>
+<span><strong>Snacks:</strong> Johnny</span>
+</div>
+</div>
+</article>
 
-    <section class="section-card tiles-section">
-      <div class="section-title">
-        <h2>Week at a Glance</h2>
-        <span class="muted">The essentials</span>
-      </div>
 
-      <div class="info-tiles">
-        <a class="info-tile tile-link" href="https://beacons.ai/scgdiscipleship" target="_blank" rel="noopener noreferrer">
-          <div class="tile-icon">🎧</div>
-          <div>
-            <div class="tile-title">Supplemental Podcast</div>
-            <p>Listen to this week's audio in one tap.</p>
-          </div>
-        </a>
+<article class="schedule-item">
+<div class="schedule-date">4/3</div>
+<div class="schedule-main">
+<div class="schedule-topic">Good Friday Service — 6:30 PM</div>
+<div class="schedule-meta">
+<span><strong>Plan:</strong> Fast together</span>
+<span><strong>After:</strong> Dinner to break fast</span>
+</div>
+</div>
+</article>
 
-        <a class="info-tile tile-link" href="#scheduleSection">
-          <div class="tile-icon">🗓️</div>
-          <div>
-            <div class="tile-title">Sunday Schedule</div>
-            <p>See the next meeting, testimony, and snacks.</p>
-          </div>
-        </a>
 
-        <div class="info-tile">
-          <div class="tile-icon">🔥</div>
-          <div>
-            <div class="tile-title">Upcoming Testimony</div>
-            <p><strong>Johnny</strong> is up next on <strong>3/29</strong>.</p>
-          </div>
-        </div>
+<article class="schedule-item">
+<div class="schedule-date">4/12</div>
+<div class="schedule-main">
+<div class="schedule-topic">Easter Sunday</div>
+<div class="schedule-meta">
+<span><strong>Status:</strong> No Meeting</span>
+</div>
+</div>
+</article>
 
-        <div class="info-tile">
-          <div class="tile-icon">✝️</div>
-          <div>
-            <div class="tile-title">Good Friday Plan</div>
-            <p>Fast starts 4/2. Service at 6:30 PM, then dinner together.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <section class="section-card" id="weeklyPlan">
-      <div class="section-title">
-        <h2>This Week</h2>
-        <span class="muted">Daily devotional plan</span>
-      </div>
+<p class="schedule-note">
+The highlighted event is the next upcoming testimony and snack assignment.
+</p>
 
-      <div class="weekly-stack" id="weeklyStack">
-        <article class="day-card" data-day-index="0" id="day-0">
-          <button class="day-toggle" type="button">
-            <div class="day-left">
-              <div class="day-name">Monday — March 23</div>
-              <div class="day-topic">Romans 1 • Living by Faith</div>
-            </div>
-            <div class="day-arrow">⌄</div>
-          </button>
-          <div class="day-body">
-            <div class="content-block"><h4>Read</h4><p>Romans 1</p></div>
-            <div class="content-block">
-              <h4>Key Verse</h4>
-              <p class="verse"><strong>Romans 1:17</strong><br>
-              “For in the gospel the righteousness of God is revealed — a righteousness that is by faith from first to last, just as it is written: ‘The righteous will live by faith.’”</p>
-            </div>
-            <div class="content-block">
-              <h4>Think</h4>
-              <ol class="questions">
-                <li>What is surprising to you about the people Jesus chose as His disciples? What is comforting?</li>
-                <li>Of the three aspects of discipleship — being with Jesus, being like Jesus, and doing what Jesus did — which is the most challenging to you? Why?</li>
-                <li>What are the indicators that a person is not living by faith that Paul outlines in our passage today?</li>
-              </ol>
-            </div>
-            <div class="content-block"><h4>Live Differently</h4><div class="application">Look back over our teaching, the Scripture you've read, and your answers above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?</div></div>
-            <div class="check-row"><input type="checkbox" id="check-0" class="progress-check" /><label for="check-0">Mark Monday complete</label></div>
-          </div>
-        </article>
+</section>
 
-        <article class="day-card" data-day-index="1" id="day-1">
-          <button class="day-toggle" type="button">
-            <div class="day-left">
-              <div class="day-name">Tuesday — March 24</div>
-              <div class="day-topic">Romans 2 • Grace Leads to Repentance</div>
-            </div>
-            <div class="day-arrow">⌄</div>
-          </button>
-          <div class="day-body">
-            <div class="content-block"><h4>Read</h4><p>Romans 2</p></div>
-            <div class="content-block">
-              <h4>Key Verse</h4>
-              <p class="verse"><strong>Romans 2:4</strong><br>
-              “Or do you show contempt for the riches of his kindness, forbearance, and patience, not realizing that God’s kindness is intended to lead you to repentance.”</p>
-            </div>
-            <div class="content-block">
-              <h4>Think</h4>
-              <ol class="questions">
-                <li>What does “imputed righteousness” mean?</li>
-                <li>Why is God’s grace the only acceptable motivation for living differently?</li>
-                <li>What does Romans 2 teach you about the righteousness that God expects from His people?</li>
-              </ol>
-            </div>
-            <div class="content-block"><h4>Live Differently</h4><div class="application">Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?</div></div>
-            <div class="check-row"><input type="checkbox" id="check-1" class="progress-check" /><label for="check-1">Mark Tuesday complete</label></div>
-          </div>
-        </article>
+</main>
 
-        <article class="day-card" data-day-index="2" id="day-2">
-          <button class="day-toggle" type="button">
-            <div class="day-left">
-              <div class="day-name">Wednesday — March 25</div>
-              <div class="day-topic">Romans 3:1–20 • No One Righteous</div>
-            </div>
-            <div class="day-arrow">⌄</div>
-          </button>
-          <div class="day-body">
-            <div class="content-block"><h4>Read</h4><p>Romans 3:1–20</p></div>
-            <div class="content-block">
-              <h4>Key Verse</h4>
-              <p class="verse"><strong>Romans 3:10</strong><br>
-              “As it is written: ‘There is no one righteous, not even one.’”</p>
-            </div>
-            <div class="content-block">
-              <h4>Think</h4>
-              <ol class="questions">
-                <li>How does today's analogy help you better understand how God's grace frees us to live bold lives of freedom?</li>
-                <li>What does it mean when we say that God will only bless you when you are “blessable”?</li>
-                <li>We say that humans are naturally slaves to sin, just like climbers are slaves to gravity. How does our passage today further illuminate this concept?</li>
-              </ol>
-            </div>
-            <div class="content-block"><h4>Live Differently</h4><div class="application">Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?</div></div>
-            <div class="check-row"><input type="checkbox" id="check-2" class="progress-check" /><label for="check-2">Mark Wednesday complete</label></div>
-          </div>
-        </article>
-
-        <article class="day-card" data-day-index="3" id="day-3">
-          <button class="day-toggle" type="button">
-            <div class="day-left">
-              <div class="day-name">Thursday — March 26</div>
-              <div class="day-topic">Romans 3:21–31 • Justified by Grace</div>
-            </div>
-            <div class="day-arrow">⌄</div>
-          </button>
-          <div class="day-body">
-            <div class="content-block"><h4>Read</h4><p>Romans 3:21–31</p></div>
-            <div class="content-block">
-              <h4>Key Verse</h4>
-              <p class="verse"><strong>Romans 3:23–24</strong><br>
-              “…for all have sinned and fall short of the glory of God, and all are justified freely by his grace through the redemption that came by Christ Jesus.”</p>
-            </div>
-            <div class="content-block">
-              <h4>Think</h4>
-              <ol class="questions">
-                <li>Why is it important for Christians to retreat and resist the world at times?</li>
-                <li>What does it mean when the Bible describes disciples of Jesus as “ambassadors”?</li>
-                <li>Who, according to today's Scripture, needs Jesus' grace? Who is it available to? Why is this important to remember?</li>
-              </ol>
-            </div>
-            <div class="content-block"><h4>Live Differently</h4><div class="application">Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?</div></div>
-            <div class="check-row"><input type="checkbox" id="check-3" class="progress-check" /><label for="check-3">Mark Thursday complete</label></div>
-          </div>
-        </article>
-
-        <article class="day-card" data-day-index="4" id="day-4">
-          <button class="day-toggle" type="button">
-            <div class="day-left">
-              <div class="day-name">Friday — March 27</div>
-              <div class="day-topic">Romans 4 • Credited Righteousness</div>
-            </div>
-            <div class="day-arrow">⌄</div>
-          </button>
-          <div class="day-body">
-            <div class="content-block"><h4>Read</h4><p>Romans 4</p></div>
-            <div class="content-block">
-              <h4>Key Verse</h4>
-              <p class="verse"><strong>Romans 4:7–8</strong><br>
-              “Blessed are those whose transgressions are forgiven, whose sins are covered. Blessed is the one whose sin the Lord will never count against them.”</p>
-            </div>
-            <div class="content-block">
-              <h4>Think</h4>
-              <ol class="questions">
-                <li>How does the Holy Spirit's power enable us to embrace reality, even when it's painful?</li>
-                <li>What does it mean to resist or “quench” the Holy Spirit's power? Is it possible to do this and remain a disciple of Jesus?</li>
-                <li>Given all you have learned so far, what does it mean that God “credits” us with righteousness?</li>
-              </ol>
-            </div>
-            <div class="content-block"><h4>Live Differently</h4><div class="application">Look back over our teaching, the Scripture you've read, and your answers to the questions above. What do you sense God is asking you to do or change in your life as a result of what you've studied today?</div></div>
-            <div class="check-row"><input type="checkbox" id="check-4" class="progress-check" /><label for="check-4">Mark Friday complete</label></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-card" id="scheduleSection">
-      <div class="section-title">
-        <h2>Upcoming Events</h2>
-        <span class="muted">Every Sunday at 9:00 AM</span>
-      </div>
-
-      <div class="schedule-cards">
-        <article class="schedule-item">
-          <div class="schedule-date">3/15</div>
-          <div class="schedule-main">
-            <div class="schedule-topic">Week 1: Launch</div>
-            <div class="schedule-meta">
-              <span>Testimony: Michael</span>
-              <span>Snacks: Michael</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="schedule-item">
-          <div class="schedule-date">3/22</div>
-          <div class="schedule-main">
-            <div class="schedule-topic">Week 2: Jesus is King</div>
-            <div class="schedule-meta">
-              <span>Testimony: Ray/Mike</span>
-              <span>Snacks: Ray/Mike</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="schedule-item schedule-item--highlight">
-          <div class="schedule-date">3/29</div>
-          <div class="schedule-main">
-            <div class="schedule-topic">Week 3: Jesus is Our King <span class="upcoming-chip">Upcoming</span></div>
-            <div class="schedule-meta">
-              <span><strong>Testimony: Johnny</strong></span>
-              <span>Snacks: Johnny</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="schedule-item">
-          <div class="schedule-date">4/3</div>
-          <div class="schedule-main">
-            <div class="schedule-topic">Good Friday</div>
-            <div class="schedule-meta">
-              <span>Testimony: Group Service</span>
-              <span>Snacks: Dinner After</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="schedule-item">
-          <div class="schedule-date">4/12</div>
-          <div class="schedule-main">
-            <div class="schedule-topic">Easter Sunday</div>
-            <div class="schedule-meta">
-              <span><strong>No Meeting</strong></span>
-              <span>Snacks: —</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <p class="schedule-note">The highlighted card shows the next upcoming testimony and snack assignment.</p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
